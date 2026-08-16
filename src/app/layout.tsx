@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "MSME funding",
     "entrepreneurship programme design",
     "grant writing Africa",
-    "Yemisi Isidi",
+    "Yemisi Ajeojo",
   ],
   authors: [{ name: "Idea to Funded" }],
   icons: {

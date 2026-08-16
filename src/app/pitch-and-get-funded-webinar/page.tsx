@@ -9,14 +9,14 @@ import Reveal from "@/components/ui/Reveal";
 import { webinarLearn, webinarAudience, webinarTestimonials } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "How to Pitch and Get Funded — Free Webinar",
+  title: "How to Pitch and Get Funded — Webinar",
   description:
-    "Join Yemisi Isidi's free live webinar on 4 September 2026. Learn how to pitch your idea, create a compelling pitch deck and attract funding or grants.",
+    "Join Yemisi Ajeojo's webinar on 4 September 2026. Learn how to pitch your idea, create a compelling pitch deck and attract funding or grants.",
   alternates: { canonical: "/pitch-and-get-funded-webinar" },
   openGraph: {
-    title: "How to Pitch and Get Funded — Free Webinar | Idea to Funded",
+    title: "How to Pitch and Get Funded — Webinar | Idea to Funded",
     description:
-      "Join Yemisi Isidi's free live webinar on 4 September 2026. Learn how to pitch your idea, create a compelling pitch deck and attract funding or grants.",
+      "Join Yemisi Ajeojo's webinar on 4 September 2026. Learn how to pitch your idea, create a compelling pitch deck and attract funding or grants.",
     url: "/pitch-and-get-funded-webinar",
     type: "website",
   },
@@ -34,7 +34,7 @@ export default function WebinarPage() {
     organizer: { "@type": "Organization", name: "Idea to Funded", url: "https://ideatofunded.com" },
     offers: { "@type": "Offer", price: "0", priceCurrency: "NGN", url: "https://ideatofunded.com/pitch-and-get-funded-webinar" },
     description:
-      "A free live webinar teaching founders how to pitch their idea, build a compelling pitch deck, and attract funding or grants.",
+      "A webinar teaching founders how to pitch their idea, build a compelling pitch deck, and attract funding or grants.",
   };
 
   return (
@@ -45,14 +45,14 @@ export default function WebinarPage() {
         <section className="bg-ink text-cream">
           <div className="section py-20 sm:py-24">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="eyebrow mb-5 text-flare">Free Live Webinar for Founders & Aspiring Entrepreneurs</p>
+              <p className="eyebrow mb-5 text-flare">Live Webinar for Founders & Aspiring Entrepreneurs</p>
               <h1 className="font-display text-4xl leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
                 Learn How to Pitch Your Idea and{" "}
                 <span className="italic text-flare">Get Funded</span>
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-cream/75 sm:text-lg">
                 Even if you have no business experience, no pitch deck, and no idea what funders
-                are looking for. Join Yemisi Isidi, founder of Idea to Funded, for a practical live
+                are looking for. Join Yemisi Ajeojo, founder of Idea to Funded, for a practical live
                 webinar on pitching your idea with confidence.
               </p>
               <p className="mt-5 text-sm font-semibold text-gold">
@@ -94,12 +94,19 @@ export default function WebinarPage() {
         <section className="bg-ink pb-16">
           <div className="section grid grid-cols-3 gap-3 sm:gap-4">
             {[
-              { src: "/images/woman-yellow-sweater.jpg", alt: "Founder preparing her pitch on a laptop" },
-              { src: "/images/man-suit-documents.jpg", alt: "Founder reviewing his funding documents" },
-              { src: "/images/team-review-tablet.jpg", alt: "Two founders reviewing a pitch deck together" },
+              { src: "/images/woman-writing-desk.jpg", alt: "Founder preparing her pitch at her desk", position: "center" },
+              { src: "/images/man-suit-documents.jpg", alt: "Founder reviewing his funding documents", position: "50% 22%" },
+              { src: "/images/colleagues-small.jpg", alt: "Two founders discussing their pitch together", position: "center" },
             ].map((img) => (
               <div key={img.src} className="relative aspect-square overflow-hidden rounded-2xl sm:aspect-[4/5]">
-                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 640px) 33vw, 300px" className="object-cover" />
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(max-width: 640px) 33vw, 300px"
+                  className="object-cover"
+                  style={{ objectPosition: img.position }}
+                />
               </div>
             ))}
           </div>
@@ -149,7 +156,7 @@ export default function WebinarPage() {
                   <p>
                     But I have also seen founders with genuinely strong ideas lose opportunities
                     because they struggled to explain what they were building, why it mattered, or
-                    why someone should invest in it. That is why I am hosting this free webinar.
+                    why someone should invest in it. That is why I am hosting this webinar.
                   </p>
                   <p>
                     During the session, I will break pitching down into practical, understandable
@@ -162,7 +169,7 @@ export default function WebinarPage() {
                     to learn how to present it better.
                   </p>
                 </div>
-                <p className="mt-6 font-display italic text-ink">See you inside, Yemisi Isidi</p>
+                <p className="mt-6 font-display italic text-ink">See you inside, Yemisi Ajeojo</p>
                 <p className="text-xs uppercase tracking-widest text-ink/40">Founder, Idea to Funded</p>
               </div>
             </Reveal>
@@ -174,7 +181,7 @@ export default function WebinarPage() {
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="eyebrow mb-4 text-flare">What You Will Learn</p>
             <h2 className="font-display text-3xl leading-tight text-ink sm:text-4xl">
-              By the end of this free webinar, you will understand:
+              By the end of this webinar, you will understand:
             </h2>
           </Reveal>
 
@@ -186,6 +193,7 @@ export default function WebinarPage() {
                 fill
                 sizes="360px"
                 className="object-cover"
+                style={{ objectPosition: "72% 12%" }}
               />
             </Reveal>
             <div className="grid gap-6 md:grid-cols-2">
@@ -303,8 +311,8 @@ export default function WebinarPage() {
                 <Reveal key={t.name} delay={i * 0.06} className="rounded-2xl border border-ink/10 bg-white p-6">
                   <p className="text-sm leading-relaxed text-ink/70">&ldquo;{t.quote}&rdquo;</p>
                   <div className="mt-4 flex items-center gap-2.5">
-                    <span className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full">
-                      <Image src={t.avatar} alt="" fill sizes="32px" className="object-cover" />
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-ink/90 font-display text-xs text-flare">
+                      {t.name.charAt(0)}
                     </span>
                     <p className="text-xs font-semibold uppercase tracking-wide text-ink/45">{t.name}</p>
                   </div>
@@ -323,7 +331,7 @@ export default function WebinarPage() {
                 Learn how to present your idea in a way funders can understand
               </h2>
               <p className="mt-5 text-sm leading-relaxed text-ink/65">
-                Register for the free live webinar and we will send you your personal webinar
+                Register for the webinar and we will send you your personal webinar
                 access link, a reminder before the session begins, and details on how to receive
                 your Startup Funding Checklist.
               </p>

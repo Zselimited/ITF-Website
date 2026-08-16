@@ -49,13 +49,13 @@ export default function WhatWeDo() {
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="grid gap-6 sm:grid-cols-2"
             >
-              <div className="relative col-span-full mb-2 aspect-[21/9] overflow-hidden rounded-2xl sm:aspect-[3/1]">
+              <div className="relative col-span-full mb-2 aspect-[16/8] overflow-hidden rounded-2xl">
                 <Image
                   src="/images/team-review-tablet.jpg"
                   alt="Founders reviewing their pitch materials together"
                   fill
                   sizes="(max-width: 640px) 100vw, 1200px"
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-ink/25" />
               </div>
@@ -78,13 +78,14 @@ export default function WhatWeDo() {
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="grid gap-6 sm:grid-cols-2"
             >
-              <div className="relative col-span-full mb-2 aspect-[21/9] overflow-hidden rounded-2xl sm:aspect-[3/1]">
+              <div className="relative col-span-full mb-2 aspect-[16/8] overflow-hidden rounded-2xl">
                 <Image
                   src="/images/team-meeting-laptops.jpg"
                   alt="Programme team reviewing dashboards in a cohort session"
                   fill
                   sizes="(max-width: 640px) 100vw, 1200px"
-                  className="object-cover object-top"
+                  className="object-cover"
+                  style={{ objectPosition: "50% 38%" }}
                 />
                 <div className="absolute inset-0 bg-ink/25" />
               </div>

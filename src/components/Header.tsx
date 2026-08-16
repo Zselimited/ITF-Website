@@ -3,14 +3,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Button from "@/components/ui/Button";
 
 const links = [
   { href: "/#what-we-do", label: "What We Do" },
   { href: "/#capital-copilot", label: "Capital Copilot" },
   { href: "/#academy", label: "Academy" },
   { href: "/#testimonials", label: "Stories" },
-  { href: "/pitch-and-get-funded-webinar", label: "Free Webinar" },
+  { href: "/pitch-and-get-funded-webinar", label: "Webinar" },
 ];
 
 export default function Header() {
@@ -56,12 +55,6 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
-          <Button href="/#book-call" variant={scrolled ? "primary" : "primary"} className="!px-5 !py-2.5 !text-xs">
-            Book a Call
-          </Button>
-        </div>
-
         <button
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -95,11 +88,6 @@ export default function Header() {
                 {l.label}
               </Link>
             ))}
-            <div className="mt-2">
-              <Button href="/#book-call" className="w-full justify-center">
-                Book a Call
-              </Button>
-            </div>
           </nav>
         </div>
       )}

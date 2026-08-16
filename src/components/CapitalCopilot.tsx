@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
@@ -21,25 +22,42 @@ export default function CapitalCopilot() {
           </Button>
         </div>
 
-        <div className="relative mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {/* connecting line for the process, since this genuinely is a sequence */}
-          <div className="absolute left-0 right-0 top-6 hidden h-px bg-cream/15 lg:block" />
-          {matchedSteps.map((step, i) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-              className="relative"
-            >
-              <span className="relative z-10 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-ink text-sm font-semibold text-flare ring-1 ring-flare/50">
-                {step.number}
-              </span>
-              <h3 className="font-display text-lg text-cream">{step.title}</h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-cream/65">{step.description}</p>
-            </motion.div>
-          ))}
+        <div className="mt-14 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-cream/10"
+          >
+            <Image
+              src="/images/mentor-mentee-laptop.jpg"
+              alt="An ITF mentor guiding a founder through their materials"
+              fill
+              sizes="(max-width: 1024px) 100vw, 500px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/0 to-transparent" />
+          </motion.div>
+
+          <div className="relative grid gap-8 sm:grid-cols-2">
+            {matchedSteps.map((step, i) => (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                className="relative"
+              >
+                <span className="relative z-10 mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-ink text-sm font-semibold text-flare ring-1 ring-flare/50">
+                  {step.number}
+                </span>
+                <h3 className="font-display text-lg text-cream">{step.title}</h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-cream/65">{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
@@ -48,6 +49,16 @@ export default function WhatWeDo() {
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="grid gap-6 sm:grid-cols-2"
             >
+              <div className="relative col-span-full mb-2 aspect-[21/9] overflow-hidden rounded-2xl sm:aspect-[3/1]">
+                <Image
+                  src="/images/team-review-tablet.jpg"
+                  alt="Founders reviewing their pitch materials together"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 1200px"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-ink/25" />
+              </div>
               {founderServices.map((s) => (
                 <div
                   key={s.title}
@@ -67,6 +78,16 @@ export default function WhatWeDo() {
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="grid gap-6 sm:grid-cols-2"
             >
+              <div className="relative col-span-full mb-2 aspect-[21/9] overflow-hidden rounded-2xl sm:aspect-[3/1]">
+                <Image
+                  src="/images/team-meeting-laptops.jpg"
+                  alt="Programme team reviewing dashboards in a cohort session"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 1200px"
+                  className="object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-ink/25" />
+              </div>
               {institutionServices.map((s) => (
                 <div
                   key={s.title}

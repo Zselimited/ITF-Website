@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 
@@ -87,14 +88,32 @@ export default function Hero() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, rotate: -6 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          initial={{ opacity: 0, scale: 0.94, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="relative mx-auto flex h-64 w-64 items-center justify-center sm:h-80 sm:w-80"
+          className="relative mx-auto w-full max-w-sm"
         >
-          <div className="absolute inset-0 animate-pulse-ring rounded-full border border-flare/40" />
-          <div className="absolute inset-6 rounded-full border border-cream/10" />
-          <MarkArrow />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-cream/10 shadow-2xl">
+            <Image
+              src="/images/man-suit-tablet.jpg"
+              alt="Founder reviewing his funding materials on a tablet"
+              fill
+              priority
+              sizes="(max-width: 640px) 90vw, 400px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent" />
+          </div>
+
+          {/* Signature mark badge, anchored over the photo */}
+          <div className="absolute -bottom-6 -left-6 flex h-24 w-24 items-center justify-center rounded-2xl border border-flare/30 bg-ink shadow-xl sm:-bottom-8 sm:-left-8 sm:h-28 sm:w-28">
+            <MarkArrow />
+          </div>
+
+          <div className="absolute -top-5 -right-4 rounded-xl border border-cream/15 bg-ink/90 px-4 py-3 shadow-lg backdrop-blur sm:-right-6">
+            <p className="font-display text-lg font-semibold text-cream">$20M+</p>
+            <p className="text-[10px] uppercase tracking-widest text-cream/50">Funding enabled</p>
+          </div>
         </motion.div>
       </div>
 
@@ -106,7 +125,7 @@ export default function Hero() {
 /** Animated version of the logo's lightbulb + arrow mark: the arrow draws itself on load. */
 function MarkArrow() {
   return (
-    <svg viewBox="0 0 180 215" fill="none" className="h-40 w-40 sm:h-52 sm:w-52" aria-hidden="true">
+    <svg viewBox="0 0 180 215" fill="none" className="h-14 w-14" aria-hidden="true">
       <circle
         cx="90"
         cy="70"

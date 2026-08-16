@@ -129,16 +129,19 @@ export const academyOfferings = [
     title: "Short Courses",
     description:
       "Focused, self-paced modules on funding readiness, financial management, pitch delivery, business modelling, and grant writing. Start today, apply this week.",
+    image: "/images/woman-laptop-glasses.jpg",
   },
   {
     title: "Toolkits & Playbooks",
     description:
       "Done-for-you templates, frameworks, and operational playbooks covering everything from financial models to grant applications — built by practitioners and tested in the field.",
+    image: "/images/woman-yellow-sweater.jpg",
   },
   {
     title: "Cohort Programmes",
     description:
       "Intensive cohort-based experiences — including our flagship Pitch & Get Funded programme — where founders go from idea to investor-ready pitch in a structured group setting with peer accountability.",
+    image: "/images/woman-celebrating-laptop.jpg",
   },
 ];
 
@@ -147,24 +150,28 @@ export const homeTestimonials = [
     quote:
       "I once had a consultation session with the ITF founder, Yemisi Isidi. She was so professional yet with a calming air. She opened my eyes to angles I had not even considered, and provided me with a step-by-step guide to execute in 6 weeks.",
     name: "Naija Impact Chic",
+    avatar: "/images/woman-writing-desk.jpg",
   },
   {
     quote:
       "I consulted ITF, communicating my business challenges to them. I got help, ideas, and resources. Now I can track my inventory and analyze my price and other financial activities in a way that is so much simpler.",
     name: "Jola",
     org: "Kbeauty.ng, Nigeria",
+    avatar: "/images/woman-presenting-chart.jpg",
   },
   {
     quote:
       "The ITF advisory team came up with the best approaches on how to provide free and paid value, including a membership model and a strategy to communicate this change in pricing to my audience. The session provided much needed clarity.",
     name: "Ms. O",
     org: "Skincare Brand, Nigeria",
+    avatar: "/images/woman-laptop-glasses.jpg",
   },
   {
     quote:
       "Through Coach Yemisi Isidi's training and guidance, I have gone on to raise a total of $11,000 in business grant funding from major institutions including Coca-Cola, and I'm a finalist in the Womenpreneur Pitch-A-Ton 2024.",
     name: "Esther Ebis",
     org: "CEO, Bequeenz Beauty",
+    avatar: "/images/woman-celebrating-laptop.jpg",
   },
 ];
 
@@ -207,20 +214,22 @@ export const webinarAudience = [
 ];
 
 export const webinarTestimonials = [
-  { quote: "I learned things I never knew today in this class. Thank you so much.", name: "Aisha MAC" },
-  { quote: "This class was really insightful, and I am excited!", name: "Christanah Imole-Ayo" },
-  { quote: "Thank you for this class — it's mind-blowing.", name: "Makkai" },
+  { quote: "I learned things I never knew today in this class. Thank you so much.", name: "Aisha MAC", avatar: "/images/colleagues-small.jpg" },
+  { quote: "This class was really insightful, and I am excited!", name: "Christanah Imole-Ayo", avatar: "/images/woman-laptop-glasses.jpg" },
+  { quote: "Thank you for this class — it's mind-blowing.", name: "Makkai", avatar: "/images/woman-yellow-sweater.jpg" },
   {
     quote:
       "This was really helpful. Wonderful as always, ma'am. I have heard from you before, and I'm impressed again.",
     name: "Micheal",
+    avatar: "/images/man-suit-documents.jpg",
   },
   {
     quote:
       "I had one of the most insightful and impactful sessions today — no plenty grammar, yet concise. I'm looking forward to the boot camp already!",
     name: "@officialchrislyte",
+    avatar: "/images/man-suit-tablet.jpg",
   },
-  { quote: "Thank you, Mrs Yemisi Isidi, for an incredible session! My notes are full.", name: "Previous attendee" },
+  { quote: "Thank you, Mrs Yemisi Isidi, for an incredible session! My notes are full.", name: "Previous attendee", avatar: "/images/woman-writing-desk.jpg" },
 ];
 
 export const webinarFaqs = [

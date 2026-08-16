@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { homeTestimonials } from "@/lib/site-data";
@@ -29,9 +30,14 @@ export default function Testimonials() {
               <blockquote className="text-sm leading-relaxed text-ink/75 sm:text-base">
                 {t.quote}
               </blockquote>
-              <figcaption className="mt-5 text-sm font-semibold text-ink">
-                {t.name}
-                {t.org && <span className="font-normal text-ink/50"> — {t.org}</span>}
+              <figcaption className="mt-5 flex items-center gap-3">
+                <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full">
+                  <Image src={t.avatar} alt="" fill sizes="40px" className="object-cover" />
+                </span>
+                <span className="text-sm font-semibold text-ink">
+                  {t.name}
+                  {t.org && <span className="block font-normal text-ink/50">{t.org}</span>}
+                </span>
               </figcaption>
             </motion.figure>
           ))}

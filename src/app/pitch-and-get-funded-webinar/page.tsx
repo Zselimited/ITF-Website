@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CountdownTimer from "@/components/webinar/CountdownTimer";
@@ -89,6 +90,21 @@ export default function WebinarPage() {
           </div>
         </section>
 
+        {/* PHOTO STRIP */}
+        <section className="bg-ink pb-16">
+          <div className="section grid grid-cols-3 gap-3 sm:gap-4">
+            {[
+              { src: "/images/woman-yellow-sweater.jpg", alt: "Founder preparing her pitch on a laptop" },
+              { src: "/images/man-suit-documents.jpg", alt: "Founder reviewing his funding documents" },
+              { src: "/images/team-review-tablet.jpg", alt: "Two founders reviewing a pitch deck together" },
+            ].map((img) => (
+              <div key={img.src} className="relative aspect-square overflow-hidden rounded-2xl sm:aspect-[4/5]">
+                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 640px) 33vw, 300px" className="object-cover" />
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* PROBLEM */}
         <section className="section py-20 sm:py-24">
           <Reveal className="mx-auto max-w-2xl text-center">
@@ -162,16 +178,27 @@ export default function WebinarPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {webinarLearn.map((item, i) => (
-              <Reveal key={item.title} delay={i * 0.08} className="lift flex gap-5 rounded-2xl border border-ink/10 bg-white/70 p-7">
-                <span className="font-display text-2xl text-flare/70">{String(i + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3 className="font-display text-lg text-ink">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink/65">{item.description}</p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="mt-14 grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+            <Reveal className="relative hidden aspect-[4/5] overflow-hidden rounded-3xl lg:block">
+              <Image
+                src="/images/woman-presenting-chart.jpg"
+                alt="A founder walking through her pitch numbers"
+                fill
+                sizes="360px"
+                className="object-cover"
+              />
+            </Reveal>
+            <div className="grid gap-6 md:grid-cols-2">
+              {webinarLearn.map((item, i) => (
+                <Reveal key={item.title} delay={i * 0.08} className="lift flex gap-5 rounded-2xl border border-ink/10 bg-white/70 p-7">
+                  <span className="font-display text-2xl text-flare/70">{String(i + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h3 className="font-display text-lg text-ink">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-ink/65">{item.description}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
 
           <Reveal className="mx-auto mt-12 max-w-xl text-center">
@@ -233,19 +260,30 @@ export default function WebinarPage() {
             <p className="eyebrow mb-4 text-flare">Is This Webinar for You?</p>
             <h2 className="font-display text-3xl leading-tight text-ink sm:text-4xl">This webinar is designed for:</h2>
           </Reveal>
-          <Reveal delay={0.1} className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-2">
-            {webinarAudience.map((a) => (
-              <div key={a} className="flex items-center gap-3 rounded-xl border border-ink/10 bg-white/60 px-5 py-4">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-flare/15 text-flare">
-                  <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
-                    <path d="M1 5L4.5 8.5L11 1.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </span>
-                <span className="text-sm text-ink/75">{a}</span>
-              </div>
-            ))}
-          </Reveal>
-          <Reveal delay={0.2} className="mx-auto mt-10 max-w-xl text-center text-sm text-ink/60">
+          <div className="mt-12 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <Reveal delay={0.1} className="grid gap-4 sm:grid-cols-2">
+              {webinarAudience.map((a) => (
+                <div key={a} className="flex items-center gap-3 rounded-xl border border-ink/10 bg-white/60 px-5 py-4">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-flare/15 text-flare">
+                    <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                      <path d="M1 5L4.5 8.5L11 1.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                  <span className="text-sm text-ink/75">{a}</span>
+                </div>
+              ))}
+            </Reveal>
+            <Reveal delay={0.2} className="relative order-first aspect-[4/5] overflow-hidden rounded-3xl lg:order-last">
+              <Image
+                src="/images/mentor-mentee-laptop.jpg"
+                alt="A founder getting one-on-one guidance"
+                fill
+                sizes="(max-width: 1024px) 100vw, 400px"
+                className="object-cover"
+              />
+            </Reveal>
+          </div>
+          <Reveal delay={0.25} className="mx-auto mt-10 max-w-xl text-center text-sm text-ink/60">
             <p>
               You do not need previous business experience. You do not need to have raised money
               before. You do not even need to have a finished pitch deck. If you have an idea and
@@ -264,7 +302,12 @@ export default function WebinarPage() {
               {webinarTestimonials.map((t, i) => (
                 <Reveal key={t.name} delay={i * 0.06} className="rounded-2xl border border-ink/10 bg-white p-6">
                   <p className="text-sm leading-relaxed text-ink/70">&ldquo;{t.quote}&rdquo;</p>
-                  <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-ink/45">— {t.name}</p>
+                  <div className="mt-4 flex items-center gap-2.5">
+                    <span className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full">
+                      <Image src={t.avatar} alt="" fill sizes="32px" className="object-cover" />
+                    </span>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-ink/45">{t.name}</p>
+                  </div>
                 </Reveal>
               ))}
             </div>

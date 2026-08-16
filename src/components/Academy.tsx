@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
@@ -22,10 +23,21 @@ export default function Academy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lift rounded-2xl border border-ink/10 bg-white/60 p-8"
+            className="lift overflow-hidden rounded-2xl border border-ink/10 bg-white/60"
           >
-            <h3 className="font-display text-xl text-ink">{o.title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-ink/65">{o.description}</p>
+            <div className="relative aspect-[16/10]">
+              <Image
+                src={o.image}
+                alt=""
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-cover"
+              />
+            </div>
+            <div className="p-8">
+              <h3 className="font-display text-xl text-ink">{o.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink/65">{o.description}</p>
+            </div>
           </motion.div>
         ))}
       </div>

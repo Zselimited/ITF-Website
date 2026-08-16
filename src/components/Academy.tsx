@@ -1,0 +1,48 @@
+"use client";
+
+import { motion } from "framer-motion";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Button from "@/components/ui/Button";
+import { academyOfferings } from "@/lib/site-data";
+
+export default function Academy() {
+  return (
+    <section id="academy" className="section py-24 sm:py-28">
+      <SectionHeading
+        eyebrow="ITF Academy"
+        title="Learning you can apply before the week is out."
+        description="The ITF Academy delivers practical, founder-focused learning — no fluff, no theory that doesn't translate. Whether you are a first-time founder or an experienced operator hitting a ceiling, the Academy meets you where you are and moves you forward."
+      />
+
+      <div className="mt-14 grid gap-6 md:grid-cols-3">
+        {academyOfferings.map((o, i) => (
+          <motion.div
+            key={o.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lift rounded-2xl border border-ink/10 bg-white/60 p-8"
+          >
+            <h3 className="font-display text-xl text-ink">{o.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-ink/65">{o.description}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="mt-12 flex flex-col items-center gap-5 rounded-2xl border border-flare/30 bg-flare/10 px-8 py-10 text-center sm:flex-row sm:justify-between sm:text-left">
+        <div>
+          <p className="eyebrow mb-2 text-flare">Flagship cohort</p>
+          <h3 className="font-display text-2xl text-ink">Pitch & Get Funded — free live webinar</h3>
+          <p className="mt-2 max-w-lg text-sm text-ink/65">
+            Learn how to pitch your idea, build a compelling deck, and position your business for
+            funding or grants — even if you have no business experience yet.
+          </p>
+        </div>
+        <Button href="/pitch-and-get-funded-webinar" className="shrink-0">
+          Save My Free Seat
+        </Button>
+      </div>
+    </section>
+  );
+}

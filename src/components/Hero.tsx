@@ -75,7 +75,7 @@ export default function Hero() {
             custom={4}
             className="mt-8 rounded-xl border border-flare/40 bg-flare/10 px-5 py-3.5 sm:inline-flex sm:items-center sm:gap-3"
           >
-            <span className="text-sm font-semibold text-cream">Pitch Get Funded</span>
+            <span className="text-sm font-semibold text-cream">Pitch And Get Funded</span>
             <a
               href="/pitch-and-get-funded-webinar"
               className="mt-1 inline-block text-sm font-semibold text-flare underline underline-offset-4 hover:text-cream sm:mt-0"

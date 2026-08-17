@@ -1,5 +1,9 @@
 import Button from "@/components/ui/Button";
 
+const WHATSAPP_URL = "https://chat.whatsapp.com/LvVpjKlL5vI6HckUXOqn3a?s=sh&p=a&ilr=0";
+const STRATEGY_CALL_MAIL = "https://mail.google.com/mail/?view=cm&fs=1&to=itofunded@gmail.com&su=Strategy%20Call%20Request&body=Hi%20ITF%20team%2C%0A%0AI%27d%20like%20to%20book%20a%20strategy%20call.%0A%0A";
+const PARTNER_MAIL = "https://mail.google.com/mail/?view=cm&fs=1&to=itofunded@gmail.com&su=Partnership%20Enquiry&body=Hi%20ITF%20team%2C%0A%0AI%27m%20interested%20in%20partnering%20with%20Idea%20to%20Funded.%0A%0A";
+
 export default function CTABanner() {
   return (
     <section id="book-call" className="section pb-24 sm:pb-28">
@@ -10,16 +14,9 @@ export default function CTABanner() {
           Ready to build or deliver with confidence?
         </h2>
         <div id="partner" className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Button href="mailto:hello@ideatofunded.com?subject=Strategy%20Call">
-            Book Your Strategy Call Today
-          </Button>
-          <Button
-            href="mailto:hello@ideatofunded.com?subject=Partnership%20Enquiry"
-            variant="ghost"
-            className="!border-cream/25 !text-cream hover:!bg-cream/10"
-          >
-            Partner With Us
-          </Button>
+          <Button href={STRATEGY_CALL_MAIL}>Book Your Strategy Call Today</Button>
+          <Button href={PARTNER_MAIL} variant="ghost" className="!border-cream/25 !text-cream hover:!bg-cream/10">Partner With Us</Button>
+          <Button href={WHATSAPP_URL} variant="ghost" className="!border-cream/25 !text-cream hover:!bg-cream/10">Join Our Community</Button>
         </div>
       </div>
     </section>

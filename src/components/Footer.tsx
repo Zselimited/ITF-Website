@@ -22,13 +22,14 @@ export default function Footer() {
             <li><Link href="/" className="hover:text-cream">Home</Link></li>
             <li><Link href="/#what-we-do" className="hover:text-cream">Services</Link></li>
             <li><Link href="/pitch-and-get-funded-webinar" className="hover:text-cream">Webinar</Link></li>
-            <li><Link href="/#book-call" className="hover:text-cream">Contact</Link></li>
+            <li><a href="https://selfany.com/s/Ideatofunded" target="_blank" rel="noopener noreferrer" className="hover:text-cream">Resources</a></li>
+            <li><a href="mailto:itofunded@gmail.com" className="hover:text-cream">Contact</a></li>
           </ul>
         </div>
 
         <div>
           <p className="eyebrow mb-4 text-cream/40">Stay in the loop</p>
-          <form className="flex gap-2" action="mailto:hello@ideatofunded.com" method="get">
+          <form className="flex gap-2" action="mailto:itofunded@gmail.com" method="get">
             <label htmlFor="footer-email" className="sr-only">Email address</label>
             <input
               id="footer-email"
@@ -44,10 +45,23 @@ export default function Footer() {
               Join
             </button>
           </form>
-          <div className="mt-6 flex gap-4">
-            {["LinkedIn", "Instagram", "X"].map((s) => (
-              <a key={s} href="#" aria-label={s} className="text-cream/50 hover:text-cream">
-                <span className="text-xs">{s}</span>
+          <div className="mt-6 flex flex-wrap gap-4">
+            {[
+              { label: "X", href: "https://x.com/IdeatoFunded" },
+              { label: "Instagram", href: "https://www.instagram.com/ideatofunded" },
+              { label: "LinkedIn", href: "https://www.linkedin.com/company/idea-to-funded" },
+              { label: "WhatsApp", href: "https://chat.whatsapp.com/LvVpjKlL5vI6HckUXOqn3a?s=sh&p=a&ilr=0" },
+            ].map((s) => (
+              
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="text-cream/50 hover:text-cream"
+              >
+                <span className="text-xs">{s.label}</span>
               </a>
             ))}
           </div>

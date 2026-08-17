@@ -9,11 +9,10 @@ import { academyOfferings } from "@/lib/site-data";
 export default function Academy() {
   return (
     <section id="academy" className="section py-24 sm:py-28">
-      <SectionHeading
-        eyebrow="ITF Academy"
-        title="Learning you can apply before the week is out."
-        description="The ITF Academy delivers practical, founder-focused learning — no fluff, no theory that doesn't translate. Whether you are a first-time founder or an experienced operator hitting a ceiling, the Academy meets you where you are and moves you forward."
-      />
+      <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+        <SectionHeading eyebrow="ITF Academy" title="Learning you can apply before the week is out." description="The ITF Academy delivers practical, founder-focused learning — no fluff, no theory that doesn't translate. Whether you are a first-time founder or an experienced operator hitting a ceiling, the Academy meets you where you are and moves you forward." />
+        <Button href="https://selfany.com/s/Ideatofunded" variant="secondary" className="shrink-0">Explore the Academy</Button>
+      </div>
 
       <div className="mt-14 grid gap-6 md:grid-cols-3">
         {academyOfferings.map((o, i) => (

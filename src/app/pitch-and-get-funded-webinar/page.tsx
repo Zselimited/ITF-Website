@@ -3,7 +3,6 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CountdownTimer from "@/components/webinar/CountdownTimer";
-import RegisterForm from "@/components/webinar/RegisterForm";
 import FaqAccordion from "@/components/webinar/FaqAccordion";
 import Reveal from "@/components/ui/Reveal";
 import { webinarLearn, webinarAudience, webinarTestimonials } from "@/lib/site-data";
@@ -65,7 +64,7 @@ export default function WebinarPage() {
 
               <div className="mt-10">
                 <a
-                  href="#register"
+                  href="https://forms.gle/paAdX48tnx2Hdx6L9" target="_blank" rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 rounded-full bg-flare px-8 py-4 text-sm font-semibold text-white shadow-[0_10px_30px_-12px_rgba(240,109,56,0.65)] transition-all hover:bg-[#d85a26]"
                 >
                   Save My Free Seat
@@ -129,7 +128,7 @@ export default function WebinarPage() {
               This webinar will help you communicate your idea in a way that is clear, compelling,
               and easier for investors, grant providers, and potential partners to understand.
             </p>
-            <a href="#register" className="mt-8 inline-block text-sm font-semibold text-flare underline underline-offset-4 hover:text-ink">
+            <a href="https://forms.gle/paAdX48tnx2Hdx6L9" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block text-sm font-semibold text-flare underline underline-offset-4 hover:text-ink">
               Yes, I want to improve my pitch →
             </a>
           </Reveal>
@@ -214,7 +213,7 @@ export default function WebinarPage() {
               This will not be a session filled with complicated business language. You will
               receive practical guidance you can begin applying to your idea immediately.
             </p>
-            <a href="#register" className="mt-6 inline-block rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-cream hover:bg-[#0a3335]">
+            <a href="https://forms.gle/paAdX48tnx2Hdx6L9" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-cream hover:bg-[#0a3335]">
               Reserve My Free Place
             </a>
           </Reveal>
@@ -340,7 +339,24 @@ export default function WebinarPage() {
               </p>
             </Reveal>
             <Reveal delay={0.15}>
-              <RegisterForm />
+              
+              <a
+                href="https://forms.gle/paAdX48tnx2Hdx6L9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center justify-center gap-4 rounded-3xl border border-ink/10 bg-white/80 p-10 text-center transition-colors hover:border-flare/40"
+              >
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-flare/15 text-flare transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
+                  <svg width="22" height="22" viewBox="0 0 14 14" fill="none">
+                    <path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+                <span className="font-display text-xl text-ink">Open the registration form</span>
+                <span className="text-sm text-ink/60">Takes less than a minute — opens in a new tab.</span>
+                <span className="mt-2 inline-flex items-center gap-2 rounded-full bg-flare px-6 py-3 text-sm font-semibold text-white group-hover:bg-[#d85a26]">
+                  Save My Free Seat →
+                </span>
+              </a>
             </Reveal>
           </div>
         </section>
@@ -370,7 +386,7 @@ export default function WebinarPage() {
               why someone should support it. The webinar is live, practical, and completely free.
             </p>
             <a
-              href="#register"
+              href="https://forms.gle/paAdX48tnx2Hdx6L9" target="_blank" rel="noopener noreferrer"
               className="mt-9 inline-flex items-center gap-2 rounded-full bg-flare px-8 py-4 text-sm font-semibold text-white hover:bg-[#d85a26]"
             >
               Save My Free Seat →

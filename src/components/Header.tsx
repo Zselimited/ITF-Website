@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Button from "@/components/ui/Button";
+
+const WHATSAPP_URL = "https://chat.whatsapp.com/LvVpjKlL5vI6HckUXOqn3a?s=sh&p=a&ilr=0";
 
 const links = [
   { href: "/#what-we-do", label: "What We Do" },
@@ -55,6 +58,8 @@ export default function Header() {
           ))}
         </nav>
 
+        <div className="hidden lg:block"><Button href={WHATSAPP_URL} className="!px-5 !py-2.5 !text-xs">Join Community</Button></div>
+
         <button
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -88,6 +93,7 @@ export default function Header() {
                 {l.label}
               </Link>
             ))}
+            <div className="mt-2"><Button href={WHATSAPP_URL} className="w-full justify-center">Join Community</Button></div>
           </nav>
         </div>
       )}

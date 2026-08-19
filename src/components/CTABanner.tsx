@@ -1,6 +1,6 @@
 import Button from "@/components/ui/Button";
 
-const WHATSAPP_URL = "https://chat.whatsapp.com/LvVpjKlL5vI6HckUXOqn3a?s=sh&p=a&ilr=0";
+const WHATSAPP_URL = "https://chat.whatsapp.com/LvVpjKlL5vI6HckUXOqn3a";
 const STRATEGY_CALL_MAIL = "https://mail.google.com/mail/?view=cm&fs=1&to=itofunded@gmail.com&su=Strategy%20Call%20Request&body=Hi%20ITF%20team%2C%0A%0AI%27d%20like%20to%20book%20a%20strategy%20call.%0A%0A";
 const PARTNER_MAIL = "https://mail.google.com/mail/?view=cm&fs=1&to=itofunded@gmail.com&su=Partnership%20Enquiry&body=Hi%20ITF%20team%2C%0A%0AI%27m%20interested%20in%20partnering%20with%20Idea%20to%20Funded.%0A%0A";
 

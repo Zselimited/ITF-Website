@@ -3,6 +3,9 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CountdownTimer from "@/components/webinar/CountdownTimer";
+import FullRegisterForm from "@/components/webinar/FullRegisterForm";
+import { RegisterModalProvider } from "@/components/webinar/RegisterModal";
+import RegisterModalTrigger from "@/components/webinar/RegisterModalTrigger";
 import FaqAccordion from "@/components/webinar/FaqAccordion";
 import Reveal from "@/components/ui/Reveal";
 import { webinarLearn, webinarAudience, webinarTestimonials } from "@/lib/site-data";
@@ -38,6 +41,7 @@ export default function WebinarPage() {
 
   return (
     <>
+      <RegisterModalProvider>
       <Header />
       <main className="bg-cream">
         {/* HERO */}
@@ -63,15 +67,12 @@ export default function WebinarPage() {
               </div>
 
               <div className="mt-10">
-                <a
-                  href="https://forms.gle/paAdX48tnx2Hdx6L9" target="_blank" rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full bg-flare px-8 py-4 text-sm font-semibold text-white shadow-[0_10px_30px_-12px_rgba(240,109,56,0.65)] transition-all hover:bg-[#d85a26]"
-                >
+                <RegisterModalTrigger className="group inline-flex items-center gap-2 rounded-full bg-flare px-8 py-4 text-sm font-semibold text-white shadow-[0_10px_30px_-12px_rgba(240,109,56,0.65)] transition-all hover:bg-[#d85a26]">
                   Save My Free Seat
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
                     <path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </a>
+                </RegisterModalTrigger>
               </div>
               <p className="mt-5 text-xs uppercase tracking-widest text-cream/45">
                 Friday, 4 September 2026 · Live Online · Free to Attend · No experience required
@@ -128,7 +129,7 @@ export default function WebinarPage() {
               This webinar will help you communicate your idea in a way that is clear, compelling,
               and easier for investors, grant providers, and potential partners to understand.
             </p>
-            <a href="https://forms.gle/paAdX48tnx2Hdx6L9" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block text-sm font-semibold text-flare underline underline-offset-4 hover:text-ink">
+            <a href="#register-section" className="mt-8 inline-block text-sm font-semibold text-flare underline underline-offset-4 hover:text-ink">
               Yes, I want to improve my pitch →
             </a>
           </Reveal>
@@ -213,7 +214,7 @@ export default function WebinarPage() {
               This will not be a session filled with complicated business language. You will
               receive practical guidance you can begin applying to your idea immediately.
             </p>
-            <a href="https://forms.gle/paAdX48tnx2Hdx6L9" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-cream hover:bg-[#0a3335]">
+            <a href="#register-section" className="mt-6 inline-block rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-cream hover:bg-[#0a3335]">
               Reserve My Free Place
             </a>
           </Reveal>
@@ -323,42 +324,23 @@ export default function WebinarPage() {
 
         {/* REGISTER */}
         <section id="register-section" className="section py-20 sm:py-24">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <Reveal>
-              <p className="eyebrow mb-4 text-flare">Save Your Free Seat</p>
-              <h2 className="font-display text-3xl leading-tight text-ink sm:text-4xl">
-                Learn how to present your idea in a way funders can understand
-              </h2>
-              <p className="mt-5 text-sm leading-relaxed text-ink/65">
-                Register for the webinar and we will send you your personal webinar
-                access link, a reminder before the session begins, and details on how to receive
-                your Startup Funding Checklist.
-              </p>
-              <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-gold">
-                Friday, 4 September 2026 · Live Online
-              </p>
-            </Reveal>
-            <Reveal delay={0.15}>
-              
-              <a
-                href="https://forms.gle/paAdX48tnx2Hdx6L9"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col items-center justify-center gap-4 rounded-3xl border border-ink/10 bg-white/80 p-10 text-center transition-colors hover:border-flare/40"
-              >
-                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-flare/15 text-flare transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                  <svg width="22" height="22" viewBox="0 0 14 14" fill="none">
-                    <path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </span>
-                <span className="font-display text-xl text-ink">Open the registration form</span>
-                <span className="text-sm text-ink/60">Takes less than a minute — opens in a new tab.</span>
-                <span className="mt-2 inline-flex items-center gap-2 rounded-full bg-flare px-6 py-3 text-sm font-semibold text-white group-hover:bg-[#d85a26]">
-                  Save My Free Seat →
-                </span>
-              </a>
-            </Reveal>
-          </div>
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <p className="eyebrow mb-4 text-flare">Save Your Seat</p>
+            <h2 className="font-display text-3xl leading-tight text-ink sm:text-4xl">
+              Learn how to present your idea in a way funders can understand
+            </h2>
+            <p className="mt-5 text-sm leading-relaxed text-ink/65">
+              Fill in the form below and you&apos;ll be taken straight to the ITF WhatsApp
+              community, where your access link, reminders, and the Startup Funding Checklist
+              will be shared.
+            </p>
+            <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-gold">
+              Friday, 4 September 2026 · Live Online
+            </p>
+          </Reveal>
+          <Reveal delay={0.15} className="mx-auto mt-12 max-w-xl">
+            <FullRegisterForm />
+          </Reveal>
         </section>
 
         {/* FAQ */}
@@ -385,12 +367,9 @@ export default function WebinarPage() {
               Spend one evening learning how to explain what you are building, why it matters, and
               why someone should support it. The webinar is live, practical, and completely free.
             </p>
-            <a
-              href="https://forms.gle/paAdX48tnx2Hdx6L9" target="_blank" rel="noopener noreferrer"
-              className="mt-9 inline-flex items-center gap-2 rounded-full bg-flare px-8 py-4 text-sm font-semibold text-white hover:bg-[#d85a26]"
-            >
+            <RegisterModalTrigger className="mt-9 inline-flex items-center gap-2 rounded-full bg-flare px-8 py-4 text-sm font-semibold text-white hover:bg-[#d85a26]">
               Save My Free Seat →
-            </a>
+            </RegisterModalTrigger>
             <p className="mt-5 text-xs uppercase tracking-widest text-cream/45">
               Friday, 4 September 2026 · Live Online · No previous business experience required
             </p>
@@ -402,6 +381,7 @@ export default function WebinarPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
       />
+      </RegisterModalProvider>
     </>
   );
 }

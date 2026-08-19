@@ -98,3 +98,21 @@ textarea:focus-visible,
   transform: translateY(-4px);
   box-shadow: 0 20px 40px -20px rgba(13, 65, 67, 0.35);
 }
+
+/* Shared form field style for the webinar registration form */
+.input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(13, 65, 67, 0.15);
+  background: rgba(237, 226, 208, 0.4);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: var(--ink);
+}
+.input::placeholder {
+  color: rgba(13, 65, 67, 0.35);
+}
+.input:focus-visible {
+  outline: 2px solid var(--flare);
+  outline-offset: 2px;
+}

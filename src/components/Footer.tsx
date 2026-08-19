@@ -50,7 +50,7 @@ export default function Footer() {
               { label: "X", href: "https://x.com/IdeatoFunded" },
               { label: "Instagram", href: "https://www.instagram.com/ideatofunded" },
               { label: "LinkedIn", href: "https://www.linkedin.com/company/idea-to-funded" },
-              { label: "WhatsApp", href: "https://chat.whatsapp.com/LvVpjKlL5vI6HckUXOqn3a?s=sh&p=a&ilr=0" },
+              { label: "WhatsApp", href: "https://chat.whatsapp.com/LvVpjKlL5vI6HckUXOqn3a" },
             ].map((s) => (
               
               <a

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 
-const WHATSAPP_URL = "https://chat.whatsapp.com/LvVpjKlL5vI6HckUXOqn3a?s=sh&p=a&ilr=0";
+const WHATSAPP_URL = "https://chat.whatsapp.com/LvVpjKlL5vI6HckUXOqn3a";
 
 const links = [
   { href: "/#what-we-do", label: "What We Do" },

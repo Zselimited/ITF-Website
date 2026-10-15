@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { WEBINAR_DATE_ISO } from "@/lib/site-data";
+import { BOOTCAMP_START_ISO } from "@/lib/site-data";
 
 function getTimeLeft() {
-  const diff = new Date(WEBINAR_DATE_ISO).getTime() - Date.now();
+  const diff = new Date(BOOTCAMP_START_ISO).getTime() - Date.now();
   const clamped = Math.max(diff, 0);
   return {
     days: Math.floor(clamped / (1000 * 60 * 60 * 24)),

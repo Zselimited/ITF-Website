@@ -116,3 +116,20 @@ textarea:focus-visible,
   outline: 2px solid var(--flare);
   outline-offset: 2px;
 }
+
+/* Visible horizontal scrollbar for image galleries */
+.gallery-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #f06d38 rgba(237, 226, 208, 0.15);
+}
+.gallery-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.gallery-scroll::-webkit-scrollbar-track {
+  background: rgba(237, 226, 208, 0.15);
+  border-radius: 9999px;
+}
+.gallery-scroll::-webkit-scrollbar-thumb {
+  background: #f06d38;
+  border-radius: 9999px;
+}

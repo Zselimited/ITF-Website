@@ -12,7 +12,7 @@ const links = [
   { href: "/#capital-copilot", label: "Capital Copilot" },
   { href: "/#academy", label: "Academy" },
   { href: "/#testimonials", label: "Stories" },
-  { href: "/pitch-and-get-funded-webinar", label: "Webinar" },
+  { href: "/pitch-and-get-funded-webinar", label: "Bootcamp" },
 ];
 
 export default function Header() {

@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { webinarFaqs } from "@/lib/site-data";
+import { bootcampFaqs } from "@/lib/site-data";
 
 export default function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <div className="divide-y divide-ink/10 rounded-2xl border border-ink/10 bg-white/60">
-      {webinarFaqs.map((faq, i) => {
+      {bootcampFaqs.map((faq, i) => {
         const isOpen = openIndex === i;
         return (
           <div key={faq.question}>

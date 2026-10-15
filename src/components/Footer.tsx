@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import NewsletterForm from "./NewsletterForm";
 
 export default function Footer() {
   return (
@@ -21,7 +22,7 @@ export default function Footer() {
           <ul className="space-y-2.5 text-sm">
             <li><Link href="/" className="hover:text-cream">Home</Link></li>
             <li><Link href="/#what-we-do" className="hover:text-cream">Services</Link></li>
-            <li><Link href="/pitch-and-get-funded-webinar" className="hover:text-cream">Webinar</Link></li>
+            <li><Link href="/pitch-and-get-funded-webinar" className="hover:text-cream">Bootcamp</Link></li>
             <li><a href="https://selfany.com/s/Ideatofunded" target="_blank" rel="noopener noreferrer" className="hover:text-cream">Resources</a></li>
             <li><a href="mailto:itofunded@gmail.com" className="hover:text-cream">Contact</a></li>
           </ul>
@@ -29,22 +30,7 @@ export default function Footer() {
 
         <div>
           <p className="eyebrow mb-4 text-cream/40">Stay in the loop</p>
-          <form className="flex gap-2" action="mailto:itofunded@gmail.com" method="get">
-            <label htmlFor="footer-email" className="sr-only">Email address</label>
-            <input
-              id="footer-email"
-              type="email"
-              required
-              placeholder="you@email.com"
-              className="w-full rounded-full border border-cream/20 bg-transparent px-4 py-2.5 text-sm text-cream placeholder:text-cream/40 focus-visible:outline-2"
-            />
-            <button
-              type="submit"
-              className="shrink-0 rounded-full bg-flare px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#d85a26]"
-            >
-              Join
-            </button>
-          </form>
+          <NewsletterForm />
           <div className="mt-6 flex flex-wrap gap-4">
             {[
               { label: "X", href: "https://x.com/IdeatoFunded" },

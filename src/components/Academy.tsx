@@ -48,14 +48,14 @@ export default function Academy() {
       <div className="mt-12 flex flex-col items-center gap-5 rounded-2xl border border-flare/30 bg-flare/10 px-8 py-10 text-center sm:flex-row sm:justify-between sm:text-left">
         <div>
           <p className="eyebrow mb-2 text-flare">Flagship cohort</p>
-          <h3 className="font-display text-2xl text-ink">Pitch & Get Funded — Webinar</h3>
+          <h3 className="font-display text-2xl text-ink">Pitch & Get Funded — 2026 Bootcamp</h3>
           <p className="mt-2 max-w-lg text-sm text-ink/65">
-            Learn how to pitch your idea, build a compelling deck, and position your business for
-            funding or grants — even if you have no business experience yet.
+            A practical 6-week funding-readiness bootcamp. Build, test and strengthen your pitch — from the
+            problem you solve to your numbers, funding ask, delivery and funder strategy.
           </p>
         </div>
         <Button href="/pitch-and-get-funded-webinar" className="shrink-0">
-          Save My Free Seat
+          View the Bootcamp
         </Button>
       </div>
     </section>

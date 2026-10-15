@@ -80,7 +80,7 @@ export default function Hero() {
               href="/pitch-and-get-funded-webinar"
               className="mt-1 inline-block text-sm font-semibold text-flare underline underline-offset-4 hover:text-cream sm:mt-0"
             >
-              Save my free seat →
+              2026 Bootcamp — enrol now →
             </a>
           </motion.div>
         </div>

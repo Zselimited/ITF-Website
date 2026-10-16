@@ -212,186 +212,267 @@ export const bootcampAudience = [
   "Founders who already have a pitch deck but need to strengthen the story, evidence, numbers or delivery behind it",
 ];
 
-export const bootcampModules = [
+type BootcampSession = {
+  label: string; // "Orientation", "Module 1", …
+  title?: string;
+  intro: string;
+  topics?: string[];
+  output: string;
+  outputLabel?: string; // defaults to "What you build"
+};
+
+export const bootcampWeeks: { week: number; date: string; sessions: BootcampSession[] }[] = [
   {
-    number: 1,
-    short: "Problem First",
-    title: "Problem First: Why This, Why Now and Why You",
-    date: "7 November 2026",
-    focus: "Building a compelling problem narrative.",
-    intro:
-      "A strong pitch starts long before the solution slide. If the person listening does not clearly understand the problem, why it matters and why it needs solving now, everything that follows becomes harder to sell.",
-    coverLabel: "In this module, you will explore:",
-    topics: [
-      "How to clearly define the problem your business is solving",
-      "How to support the problem with evidence rather than assumptions",
-      "How to communicate the scale, relevance or urgency of the problem",
-      "Why now is the right time for the opportunity",
-      "Founder-market fit and why you or your team are positioned to solve the problem",
-      "How to describe your company clearly in one line",
-      "How to remove jargon and unnecessary complexity from your story",
-      "How to build a concise 30–60 second elevator pitch",
+    week: 1,
+    date: "Saturday 7 November",
+    sessions: [
+      {
+        label: "Orientation",
+        intro:
+          "Get set up for the programme. You will be introduced to the scoring rubric and the deck template, meet your pod, and agree on how the cohort will work together. You will also record a baseline 3-minute pitch, so you can see exactly how far you have come by Demo Day.",
+        output: "Baseline pitch score",
+      },
+      {
+        label: "Module 1",
+        title: "Problem Lab: Why This, Why Now, Why You",
+        intro:
+          "A strong pitch starts long before the solution slide. If the person listening does not clearly understand the problem, why it matters and why it needs solving now, everything that follows becomes harder to sell. In this lab, your problem story is critiqued and rewritten.",
+        topics: [
+          "Defining the problem and backing it with evidence, not assumptions",
+          "Why now is the right time for this opportunity",
+          "Founder-market fit: why you or your team are positioned to solve it",
+          "Describing your company clearly in one line",
+        ],
+        output: "Problem, Why Now and Team slides + a 60-second elevator pitch",
+      },
     ],
-    output: "Problem Statement + Why Now Statement + 30–60 Second Elevator Pitch",
   },
   {
-    number: 2,
-    short: "Build the Story",
-    title: "Build the Story: Solution, Market and Why You Win",
-    date: "14 November 2026",
-    focus: "Turning your business into a clear investment story.",
-    intro:
-      "Once the problem is clear, the rest of your pitch has to connect. Your solution, market, competition and differentiation should not feel like separate slides. Together, they should tell one convincing story about why the opportunity exists and why your business is positioned to capture it.",
-    coverLabel: "In this module, you will work on:",
-    topics: [
-      "Your one-line value proposition",
-      "What your solution does and how it works",
-      "Who the solution is for",
-      "Your market opportunity",
-      "Understanding the alternatives already available to customers",
-      "Mapping your competitors",
-      "Communicating your differentiation clearly",
-      "Explaining why your approach can win",
-      "Structuring your pitch deck so that one slide naturally leads to the next",
-      "Building a clear story arc across your deck",
+    week: 2,
+    date: "Saturday 14 November",
+    sessions: [
+      {
+        label: "Module 2",
+        title: "The Solution",
+        intro: "Show funders what you have built and why it is better.",
+        topics: [
+          "Your value proposition: what it is, who it is for, and why it is better",
+          "How your product works",
+          "Showing rather than describing",
+          "What makes your solution unique",
+        ],
+        output: "Solution and Product slides + a one-line value proposition",
+      },
+      {
+        label: "Module 3",
+        title: "Market Size and Competition",
+        intro: "Prove the opportunity is real and explain why you can win it.",
+        topics: [
+          "Building a bottom-up TAM, SAM and SOM",
+          "Defining your target customer",
+          "Mapping your competitors and the alternatives customers already use",
+          "Communicating your differentiation clearly",
+        ],
+        output: "Market and Competition slides",
+      },
     ],
-    output: "Pitch Deck V0 — a complete deck skeleton with your value proposition, market and competition sections.",
   },
   {
-    number: 3,
-    short: "Prove It",
-    title: "Prove It: Traction, Validation and the Metrics That Matter",
-    date: "21 November 2026",
-    focus: "Showing evidence that fits your stage.",
-    intro:
-      "You do not need millions in revenue to show progress. But you do need evidence that demonstrates that you are learning, validating or growing. What counts as traction for an idea-stage founder will look different from what investors expect from a revenue-generating business. This module helps you identify the evidence that matters at your current stage.",
-    coverLabel: "You will work on:",
-    topics: [
-      "What traction means at different stages of a business",
-      "Idea-stage validation",
-      "Customer interviews and early demand signals",
-      "Pre-revenue evidence",
-      "MVP usage, pilots, waitlists and letters of intent",
-      "Revenue-stage traction",
-      "Choosing the three to five metrics that best demonstrate progress",
-      "Distinguishing genuine evidence from vanity metrics",
-      "Presenting numbers and data clearly",
-      "Connecting your traction back to the story you are telling investors",
+    week: 3,
+    date: "Saturday 21 November",
+    sessions: [
+      {
+        label: "Module 4",
+        title: "Business Model",
+        intro: "Show how your business makes money and how it grows.",
+        topics: [
+          "Who pays, how, how much and how often",
+          "Pricing and revenue streams",
+          "Your key cost drivers",
+          "What makes your model scale",
+        ],
+        output: "Business Model slide",
+      },
+      {
+        label: "Module 5",
+        title: "Go-to-Market and Growth Strategy",
+        intro: "Show funders how you will reach customers and grow over the next year.",
+        topics: [
+          "Your target segment and channels",
+          "Your sales motion",
+          "Partnerships that accelerate growth",
+          "Your 12-month growth plan",
+        ],
+        output: "Go-to-Market slide + a 12-month growth plan",
+      },
     ],
-    output: "Traction Slide + Supporting Evidence Sheet",
   },
   {
-    number: 4,
-    short: "The Numbers and the Ask",
-    title: "The Numbers and the Ask",
-    date: "28 November 2026",
-    focus: "Connecting your business model to a credible funding request.",
-    intro:
-      "“How much are you raising, and what will you do with it?” is where many otherwise strong pitches lose credibility. This module helps you understand the numbers behind your business and communicate them in a way that makes your funding request easier to understand and defend.",
-    coverLabel: "You will work on:",
-    topics: [
-      "Different funding pathways, including grants, angel investment, venture capital and debt",
-      "Choosing funding that fits your business and stage",
-      "Your business and revenue model",
-      "Unit economics",
-      "Key costs",
-      "Runway",
-      "Financial assumptions",
-      "12–18 month projections",
-      "Determining your funding requirement",
-      "Building a clear funding ask",
-      "Use of funds",
-      "Connecting funding to measurable milestones",
-      "Considerations when pitching international or diaspora investors",
+    week: 4,
+    date: "Saturday 28 November",
+    sessions: [
+      {
+        label: "Module 6",
+        title: "Key Numbers You Need to Know and Show",
+        intro:
+          "You do not need millions in revenue to show progress. You do need the right evidence for your stage. This module covers the metrics funders check, from idea-stage validation to revenue-stage growth.",
+        topics: [
+          "Traction at your stage, including pre-revenue evidence",
+          "Revenue and growth, margins, CAC and LTV",
+          "Burn rate and runway",
+          "Real metrics versus vanity metrics",
+          "Presenting data clearly on a slide",
+        ],
+        output: "Traction slide + a one-page financial snapshot",
+      },
+      {
+        label: "Module 7",
+        title: "The Ask",
+        intro:
+          "“How much are you raising, and what will you do with it?” is where many otherwise strong pitches lose credibility. This module helps you build an ask you can defend.",
+        topics: [
+          "How much to raise",
+          "What kind of money fits: grant, equity, SAFE or debt",
+          "Use of funds and the milestones it unlocks",
+          "Valuation basics",
+          "Matching your ask to the right funder",
+        ],
+        output: "Ask and Use of Funds slide",
+      },
     ],
-    output: "Financial Snapshot + Funding Ask, completing Pitch Deck V1",
   },
   {
-    number: 5,
-    short: "Own the Room",
-    title: "Own the Room: Delivery, Investor Questions and Objections",
-    date: "5 December 2026",
-    focus: "Pitch delivery and handling investor scrutiny.",
-    intro:
-      "A good deck can open the door. You still need to be able to present it. This module moves beyond what is written on your slides and focuses on how you communicate when you are actually in the room.",
-    coverLabel: "You will practise:",
-    topics: [
-      "How to open your pitch strongly",
-      "Building 1-minute, 3-minute and 5-minute versions of your pitch",
-      "Pacing and time discipline",
-      "Presentation presence",
-      "Using your slides without reading from them",
-      "Communicating with clarity and confidence",
-      "Anticipating investor and funder questions",
-      "Handling objections",
-      "Defending your assumptions",
-      "Responding when you do not know the answer",
-      "Staying composed when someone challenges your business model or numbers",
+    week: 5,
+    date: "Saturday 5 December",
+    sessions: [
+      {
+        label: "Module 8",
+        title: "Putting the Deck Together: Design and AI",
+        intro: "Turn your slides into one clear, well-designed deck.",
+        topics: [
+          "Deck flow and story arc",
+          "Visual hierarchy and design rules",
+          "Presenting data on slides",
+          "Using AI for drafting, design and rehearsal, with every fact checked by you",
+        ],
+        output: "Designed Pitch Deck V2 + a two-page teaser",
+      },
+      {
+        label: "Module 9",
+        title: "Delivering Your Pitch: Owning the Room",
+        intro: "A good deck can open the door. You still need to be able to present it.",
+        topics: [
+          "Making the first 30 seconds count",
+          "Building 1-minute, 3-minute and 5-minute versions of your pitch",
+          "Presence on camera and in person",
+          "Handling Q&A and objections",
+          "Answering well when you do not know",
+        ],
+        output: "Recorded 3-minute pitch + your Q&A bank",
+      },
     ],
-    output: "Recorded 3-Minute Pitch + Scored Mock Pitch. Feedback from this module will inform Pitch Deck V2.",
-  },
-  {
-    number: 6,
-    short: "Beyond the Deck",
-    title: "Beyond the Deck: Investors, Due Diligence and Closing the Loop",
-    date: "12 December 2026",
-    focus: "What happens after the deck is ready.",
-    intro:
-      "Having a strong pitch is only one part of fundraising. You also need to know who to approach, why they are relevant, how to reach them and what to do when interest turns into a deeper conversation.",
-    coverLabel: "In this module, you will work on:",
-    topics: [
-      "Understanding investor and funder fit",
-      "Identifying funding sources that align with your business and stage",
-      "Researching investors, grant-makers, lenders and partners",
-      "Warm versus cold outreach",
-      "Writing stronger introduction emails",
-      "Building and managing a fundraising pipeline",
-      "Following up after a pitch or meeting",
-      "Preparing your data room",
-      "Understanding the due diligence process",
-      "Organising the documents funders may request",
-      "Maintaining momentum after initial interest",
-      "Building strategic relationships beyond the first funding conversation",
-    ],
-    output:
-      "A list of 10 relevant investors, funders or partners, at least three justified targets, and a draft outreach message.",
   },
 ];
 
+export const bootcampDemoPrep: (BootcampSession & { date: string })[] = [
+  {
+    label: "Pod Coaching Session 3",
+    date: "Tuesday 8 December",
+    intro: "Bring your designed deck and recorded pitch to your pod for review before the mock panel.",
+    output: "",
+  },
+  {
+    label: "Scored Mock Panel",
+    date: "Saturday 12 December",
+    intro:
+      "Pitch for five minutes, then take five minutes of questions from a live panel that includes two guest funders. You are scored against the same rubric used at orientation, so you can see how far your pitch has moved since Week 1.",
+    output: "Mock panel score, written feedback and your final deck",
+    outputLabel: "What you get",
+  },
+  {
+    label: "Module 10",
+    title: "Beyond the Deck",
+    date: "Tuesday 15 December",
+    intro:
+      "A strong pitch is only one part of fundraising. You also need to know who to approach, how to reach them, and what to do when interest turns into a deeper conversation.",
+    topics: [
+      "Funder types and finding the right fit",
+      "Where to find funding",
+      "Outreach and follow-up",
+      "Due diligence and preparing your data room",
+      "Managing conversations after the pitch",
+    ],
+    output: "A target list of 10 funders, three outreach messages, a data-room checklist and a fundraising tracker",
+  },
+  {
+    label: "Demo Day",
+    date: "Saturday 19 December",
+    intro:
+      "Present the pitch you have spent the programme building. Answer questions from a funder panel and receive structured feedback on what is working and what still needs to improve.",
+    output: "",
+  },
+];
+
+export const bootcampPodDates = ["10 November", "24 November", "8 December"];
+
+export const bootcampTimeline: { date: string; milestone: string; highlight?: boolean }[] = [
+  { date: "Sat 7 November", milestone: "Orientation + Module 1 — Problem Lab" },
+  { date: "Tue 10 November", milestone: "Pod Coaching 1" },
+  { date: "Sat 14 November", milestone: "Module 2 — The Solution + Module 3 — Market Size and Competition" },
+  { date: "Sat 21 November", milestone: "Module 4 — Business Model + Module 5 — Go-to-Market and Growth" },
+  { date: "Tue 24 November", milestone: "Pod Coaching 2" },
+  { date: "Sat 28 November", milestone: "Module 6 — Key Numbers + Module 7 — The Ask" },
+  {
+    date: "Sat 5 December",
+    milestone: "Module 8 — Deck Design and AI + Module 9 — Owning the Room (final live session)",
+  },
+  { date: "Tue 8 December", milestone: "Pod Coaching 3" },
+  { date: "Sat 12 December", milestone: "Scored Mock Panel with guest funders" },
+  { date: "Tue 15 December", milestone: "Module 10 — Beyond the Deck" },
+  { date: "Sat 19 December", milestone: "Demo Day", highlight: true },
+];
+
 export const bootcampCoaching = [
-  "Review your module assignments",
-  "Ask questions",
-  "Receive feedback from the facilitator",
-  "Clarify areas you find difficult",
-  "Work through challenges you encountered while applying the module",
-  "Learn from questions and experiences shared by other founders",
-  "Refine your work before progressing to the next module",
+  "Review your assignments with a facilitator",
+  "Ask questions arising from the modules",
+  "Get clarity on areas you find difficult",
+  "Receive feedback on your work",
+  "Learn from the challenges other founders in your pod are working through",
+  "Refine your outputs before moving to the next stage",
 ];
 
 export const bootcampIncluded = [
   {
-    title: "6 Live Practical Modules",
-    description: "Six facilitator-led sessions covering the complete journey from problem definition to funder engagement.",
+    title: "10 Live Practical Modules",
+    description:
+      "Facilitator-led sessions every Saturday from 7 November to 5 December, covering the full journey from problem definition to funder engagement.",
   },
   {
-    title: "6 Facilitator-Led Group Coaching Sessions",
-    description: "One coaching session linked to each module for assignment review, questions, feedback and practical problem-solving.",
+    title: "Orientation and Baseline Pitch Review",
+    description:
+      "Start with a recorded baseline pitch, scored against the programme rubric, so you can measure your progress.",
+  },
+  {
+    title: "3 Pod Coaching Sessions",
+    description:
+      "Bi-weekly small-group sessions with dedicated facilitators, for assignment review, feedback and practical problem-solving.",
   },
   {
     title: "Practical Assignments",
-    description: "Each assignment applies directly to your business and contributes to your final pitch.",
+    description: "Every assignment applies directly to your business and builds toward your final pitch.",
   },
   {
-    title: "Pitch Development and Review",
-    description: "Build, test and strengthen your pitch throughout the programme instead of waiting until the end.",
+    title: "Scored Mock Panel with Guest Funders",
+    description:
+      "Pitch to a live panel that includes two guest funders, and receive a score and written feedback before Demo Day.",
   },
   {
     title: "Demo Day Preparation",
-    description: "Refine your final pitch, practise delivery and prepare for questions.",
+    description: "Two weeks to refine your final pitch, apply feedback and prepare for questions.",
   },
   {
     title: "Demo Day",
-    description: "Present the pitch you have spent six weeks building and receive structured feedback.",
+    description: "Present the pitch you have built to a funder panel and receive structured feedback.",
   },
 ];
 
@@ -423,14 +504,18 @@ export const bootcampResources = [
 ];
 
 export const bootcampInvestorPack = [
-  "Your refined pitch deck",
-  "Problem and Why Now narrative",
-  "Traction evidence",
-  "Financial snapshot and funding ask",
-  "Recorded pitch",
-  "Target funder list",
-  "Outreach message",
-  "Supporting fundraising materials",
+  "Your designed pitch deck, refined after the mock panel",
+  "Problem, Why Now and Team slides",
+  "A 60-second elevator pitch and one-line value proposition",
+  "Market, competition, business model and go-to-market slides",
+  "A 12-month growth plan",
+  "A traction slide and one-page financial snapshot",
+  "An Ask and Use of Funds slide",
+  "A two-page teaser",
+  "A recorded 3-minute pitch and your Q&A bank",
+  "Your mock panel score and written feedback",
+  "A target list of 10 funders and three outreach messages",
+  "A data-room checklist and fundraising tracker",
 ];
 
 type StoryImage = {
@@ -518,11 +603,31 @@ export const bootcampFaqs = [
   {
     question: "Is the programme suitable for pre-revenue founders?",
     answer:
-      "Yes. The traction module specifically looks at what evidence means at different stages, including idea-stage validation and pre-revenue traction.",
+      "Yes. Module 6, Key Numbers You Need to Know and Show, covers what evidence funders expect at each stage, including idea-stage validation and pre-revenue traction.",
+  },
+  {
+    question: "When do sessions take place?",
+    answer:
+      "Live sessions take place online every Saturday from 7 November to 5 December. Pod coaching sessions run on Tuesdays: 10 November, 24 November and 8 December.",
+  },
+  {
+    question: "What is a pod?",
+    answer:
+      "A pod is a small group of founders who are coached together throughout the programme. Pods meet every two weeks with facilitators to review assignments, give feedback and work through challenges.",
+  },
+  {
+    question: "What happens between 5 December and Demo Day?",
+    answer:
+      "After the final live session, you will have a third pod coaching session (8 December), a scored mock panel with guest funders (12 December) and Module 10, Beyond the Deck (15 December). Demo Day follows on 19 December.",
   },
   {
     question: "Can I pay in instalments?",
     answer: "Yes. Pay ₦100,000 to secure your place and complete the remaining ₦100,000 before 7 November 2026.",
+  },
+  {
+    question: "When does enrolment close?",
+    answer:
+      "Enrolment closes on 6 November 2026. If you pay a deposit, your balance must be paid before 7 November.",
   },
   {
     question: "Does joining Pitch & Get Funded guarantee that I will receive funding?",
@@ -536,7 +641,9 @@ export const bootcampFunderQuestions = [
   "Why now?",
   "Why you?",
   "Where is the evidence?",
+  "How big is the market?",
   "How does the business make money?",
+  "How will you grow?",
   "How much do you need?",
   "What will the funding unlock?",
 ];

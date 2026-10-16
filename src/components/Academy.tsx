@@ -50,8 +50,8 @@ export default function Academy() {
           <p className="eyebrow mb-2 text-flare">Flagship cohort</p>
           <h3 className="font-display text-2xl text-ink">Pitch & Get Funded — 2026 Bootcamp</h3>
           <p className="mt-2 max-w-lg text-sm text-ink/65">
-            A practical 6-week funding-readiness bootcamp. Build, test and strengthen your pitch — from the
-            problem you solve to your numbers, funding ask, delivery and funder strategy.
+            A live online funding-readiness bootcamp: 10 modules, pod coaching and a scored mock panel
+            to build and test your pitch. Starts 7 November 2026.
           </p>
         </div>
         <Button href="/pitch-and-get-funded-webinar" className="shrink-0">

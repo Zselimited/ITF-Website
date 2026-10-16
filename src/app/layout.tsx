@@ -13,6 +13,8 @@ import "@fontsource/manrope/600.css";
 import "@fontsource/manrope/700.css";
 import "@fontsource/manrope/800.css";
 import "./globals.css";
+import Analytics from "@/components/Analytics";
+import CookieBanner from "@/components/CookieBanner";
 
 const SITE_URL = "https://ideatofunded.com";
 
@@ -79,6 +81,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="font-body antialiased">
         {children}
+        <CookieBanner />
+        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

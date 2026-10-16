@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import NewsletterForm from "./NewsletterForm";
+import { CookieSettingsButton } from "./CookieBanner";
 
 export default function Footer() {
   return (
@@ -58,7 +59,8 @@ export default function Footer() {
         <div className="section flex flex-col items-center justify-between gap-3 py-6 text-xs text-cream/40 sm:flex-row">
           <p>© {new Date().getFullYear()} Idea to Funded. All rights reserved.</p>
           <div className="flex gap-5">
-            <a href="#" className="hover:text-cream/70">Privacy Policy</a>
+            <Link href="/privacy-policy" className="hover:text-cream/70">Privacy Policy</Link>
+            <CookieSettingsButton className="hover:text-cream/70" />
             <a href="#" className="hover:text-cream/70">Terms</a>
           </div>
         </div>

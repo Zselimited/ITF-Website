@@ -1,4 +1,7 @@
+"use client";
+
 import type { ReactNode } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { PAYSTACK_DEPOSIT_URL, PAYSTACK_FULL_URL } from "@/lib/site-data";
 
 type EnrolButtonProps = {
@@ -30,6 +33,15 @@ export default function EnrolButton({
     <a
       href={external ? url : "#enrol"}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      onClick={() =>
+        // Shows in GA4 as "begin_checkout": one per click through to Paystack.
+        trackEvent("begin_checkout", {
+          currency: "NGN",
+          value: plan === "deposit" ? 100000 : 200000,
+          payment_plan: plan,
+          items: [{ item_name: "Pitch & Get Funded 2026 Bootcamp", item_variant: plan }],
+        })
+      }
       className={`group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-semibold transition-all ${variants[variant]} ${className}`}
     >
       {children}
